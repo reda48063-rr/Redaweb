@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>المقررات — جامعة سبأ</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/img/saba-logo.png" alt="شعار جامعة سبأ" width="56" height="56">
+      <div>
+        <h1 class="site-title">جامعة سبأ – Saba University</h1>
+        <p class="subtitle">بوابة الكلية • الأقسام • المقررات • أعضاء هيئة التدريس</p>
+      </div>
+    </div>
+    <nav class="top-nav" aria-label="التنقل الرئيسي">
+      <button id="navToggle" aria-expanded="false" aria-controls="navMenu">القائمة ☰</button>
+      <ul id="navMenu">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="departments.html">الأقسام</a></li>
+        <li><a href="courses.html">المقررات</a></li>
+        <li><a href="instructors.html">المدرّسون</a></li>
+        <li><a href="about.html">عن الموقع</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="filters">
+      <input id="courseSearch" type="search" placeholder="ابحث عن مقرر…" aria-label="بحث عن المقررات">
+      <select id="deptSelect">
+        <option value="">كل الأقسام</option>
+      </select>
+      <select id="creditSelect">
+        <option value="">أي عدد ساعات</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+      <select id="sortSelect" aria-label="ترتيب المقررات">
+        <option value="code">حسب الكود</option>
+        <option value="title">حسب العنوان</option>
+        <option value="credits">حسب الساعات</option>
+      </select>
+    </section>
+
+    <section>
+      <div id="coursesList" class="card-grid" role="list"></div>
+    </section>
+  </main>
+
+  <div id="drawer" class="drawer" aria-hidden="true" aria-labelledby="drawerTitle" role="dialog">
+    <div class="drawer-panel">
+      <button id="drawerClose" class="close-btn" aria-label="إغلاق">×</button>
+      <h2 id="drawerTitle"></h2>
+      <div id="drawerBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <small>&copy; 2025 جامعة سبأ. ترخيص MIT (مشروع تعليمي).</small>
+  </footer>
+  <script type="module" src="assets/js/data.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
+  <script>window.__PAGE__ = "courses";</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>جامعة سبأ - البوابة الجامعية</title>
+  <meta name="description" content="بوابة جامعة سبأ: الأقسام، المقررات، المدرسون.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">تخطِ إلى المحتوى</a>
+  
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/img/saba-logo.png" alt="شعار جامعة سبأ" width="56" height="56">
+      <div>
+        <h1 class="site-title">جامعة سبأ – Saba University</h1>
+        <p class="subtitle">بوابة الكلية • الأقسام • المقررات • أعضاء هيئة التدريس</p>
+      </div>
+    </div>
+    <nav class="top-nav" aria-label="التنقل الرئيسي">
+      <button id="navToggle" aria-expanded="false" aria-controls="navMenu">القائمة ☰</button>
+      <ul id="navMenu">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="departments.html">الأقسام</a></li>
+        <li><a href="courses.html">المقررات</a></li>
+        <li><a href="instructors.html">المدرّسون</a></li>
+        <li><a href="about.html">عن الموقع</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <h2>اكتشف مسارك الدراسي</h2>
+      <p>استكشف الأقسام، قارن المقررات، وتعرّف على أعضاء هيئة التدريس — مع بحث حي وفلاتر سهلة.</p>
+      <div class="search-bar">
+        <input id="globalSearch" type="search" placeholder="ابحث عن: مقرر، كود، اسم مدرّس…" aria-label="بحث عام">
+        <button id="searchBtn" class="btn">بحث</button>
+      </div>
+      <div class="quick-filters">
+        <button class="chip" data-filter="الأمن السيبراني">الأمن السيبراني</button>
+        <button class="chip" data-filter="هندسة البرمجيات">هندسة البرمجيات</button>
+        <button class="chip" data-filter="تقنية المعلومات">تقنية المعلومات</button>
+        <button class="chip" data-filter="البرمجة">البرمجة</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="majors">
+      <h3 id="majors">تخصصات كلية الحاسوب</h3>
+      <ul class="highlights">
+        <li>الأمن السيبراني</li>
+        <li>هندسة البرمجيات</li>
+        <li>تقنية المعلومات (IT)</li>
+        <li>البرمجة</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="featured-title">
+      <h3 id="featured-title">مقررات مميّزة</h3>
+      <div id="featuredCourses" class="card-grid" role="list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>&copy; 2025 جامعة سبأ. ترخيص MIT (مشروع تعليمي).</small>
+  </footer>
+
+  <script type="module" src="assets/js/data.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
+  <script>window.__PAGE__ = "home";</script>
+</body>
+</html>
