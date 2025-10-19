@@ -1,17 +1,17 @@
 <!DOCTYPE html><html lang="ar" dir="rtl"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>آراء — Premium</title><link rel="stylesheet" href="style.css"></head><body>
+<title>آراء — Premium</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/css/style.css"></head><body>
 
 <header class="header">
   <div class="container headerbar">
-    <a class="brand" href="index.html"><img src="logo.png" alt="" width="40" height="40"><h1>فندق المها — Premium</h1></a>
+    <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="" width="40" height="40"><h1>فندق المها — Premium</h1></a>
     <nav class="nav" aria-label="التنقل">
       <a href="index.html" >الرئيسية</a>
-      <a href="rooms.html" >الغرف</a>
-      <a href="amenities.html" >الخدمات</a>
-      <a href="booking.html" >احجز الآن</a>
-      <a href="reviews.html" aria-current="page">آراء</a>
-      <a class="btn" href="admin.html">لوحة الإدارة</a>
+      <a href="pages/rooms.html" >الغرف</a>
+      <a href="pages/amenities.html" >الخدمات</a>
+      <a href="pages/booking.html" >احجز الآن</a>
+      <a href="pages/reviews.html" aria-current="page">آراء</a>
+      <a class="btn" href="pages/admin.html">لوحة الإدارة</a>
     </nav>
   </div>
 </header>
@@ -22,7 +22,7 @@
   <div class="notice fade-up" style="margin-top:1rem">نرحّب بملاحظاتكم لتحسين تجربتكم الفاخرة.</div>
 </div></section>
 <script type="module">
-  import {{ reviews }} from './data.js';
+  import {{ reviews }} from '../assets/js/data.js';
   const grid = document.getElementById('revGrid');
   grid.innerHTML = reviews.map(r=>`<article class='card fade-up'><h3>${'★'.repeat(r.stars)} (${r.stars})</h3><p><b>${r.name}</b></p><p class='meta'>${r.text}</p></article>`).join('');
 </script>
@@ -31,7 +31,7 @@
 <footer class="footer"><div class="container">© 2025 فندق المها — إصدار Premium (تعليمي).</div></footer>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script type="module">
-  import { bootCounters  } from './app.js';
+  import { bootCounters  } from './assets/js/app.js';
   bootCounters();
   
 </script>
