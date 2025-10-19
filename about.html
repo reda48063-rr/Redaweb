@@ -1,53 +1,42 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>عن الموقع — جامعة سبأ</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <header class="site-header">
-    <div class="brand">
-      <img src="assets/img/saba-logo.png" alt="شعار جامعة سبأ" width="56" height="56">
-      <div>
-        <h1 class="site-title">جامعة سبأ – Saba University</h1>
-        <p class="subtitle">بوابة الكلية • الأقسام • المقررات • أعضاء هيئة التدريس</p>
-      </div>
-    </div>
-    <nav class="top-nav" aria-label="التنقل الرئيسي">
-      <button id="navToggle" aria-expanded="false" aria-controls="navMenu">القائمة ☰</button>
-      <ul id="navMenu">
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="departments.html">الأقسام</a></li>
-        <li><a href="courses.html">المقررات</a></li>
-        <li><a href="instructors.html">المدرّسون</a></li>
-        <li><a href="about.html">عن الموقع</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="site-header">
+  <div class="brand">
+    <img src="saba-logo.png" alt="شعار جامعة سبأ" width="56" height="56">
+    <div><h1>جامعة سبأ</h1><p class="subtitle">بوابة الكلية • الأقسام • المقررات • المدرّسون</p></div>
+  </div>
+  <nav class="top-nav" aria-label="التنقل الرئيسي">
+    <button id="navToggle" aria-expanded="false" aria-controls="navMenu">القائمة ☰</button>
+    <ul id="navMenu">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="departments.html">الأقسام</a></li>
+      <li><a href="courses.html">المقررات</a></li>
+      <li><a href="instructors.html">المدرّسون</a></li>
+      <li><a href="about.html">عن الموقع</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <main id="main">
-    <article class="prose">
-      <h2>المكوّنات</h2>
-      <ul>
-        <li>هيكل HTML5 دلالي مع اتجاه RTL.</li>
-        <li>CSS متجاوب باستخدام Grid وFlex بألوان الجامعة (أخضر/ذهبي).</li>
-        <li>JavaScript (وحدات) للبحث، الفلترة، الترتيب، والمفضلة.</li>
-        <li>بدون أُطر عمل أو Build — جاهز للنشر على GitHub Pages.</li>
-      </ul>
-      <h2>طريقة النشر على GitHub Pages</h2>
-      <ol>
-        <li>أنشئ مستودعًا جديدًا عامًّا باسم <code>saba-university-portal</code>.</li>
-        <li>ارفع كل ملفات المشروع إلى جذر المستودع.</li>
-        <li>من <strong>Settings → Pages</strong> اختر الفرع <code>main</code> والمسار <code>/ (root)</code> ثم حفظ.</li>
-        <li>سيظهر رابط الموقع بعد قليل.</li>
-      </ol>
-    </article>
-  </main>
-  <footer class="site-footer">
-    <small>&copy; 2025 جامعة سبأ. ترخيص MIT (مشروع تعليمي).</small>
-  </footer>
-</body>
-</html>
+<main id="main">
+  <article class="card" style="margin:1rem">
+    <h2>عن المشروع</h2>
+    <ul>
+      <li>HTML/CSS/JS — RTL — ألوان أخضر/ذهبي.</li>
+      <li>بحث وفلترة وترتيب + مفضلة عبر LocalStorage.</li>
+      <li>يمكن تعديل البيانات من <code>data.js</code>.</li>
+    </ul>
+    <p>© 2025 مشروع تعليمي — جامعة سبأ.</p>
+  </article>
+</main>
+
+<footer class="site-footer"><small>&copy; 2025 جامعة سبأ. ترخيص MIT.</small></footer>
+<script type="module" src="data.js"></script>
+<script type="module" src="app.js"></script>
+<script>window.__PAGE__="about";</script>
+</body></html>

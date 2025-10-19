@@ -1,49 +1,38 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>المدرّسون — جامعة سبأ</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <header class="site-header">
-    <div class="brand">
-      <img src="assets/img/saba-logo.png" alt="شعار جامعة سبأ" width="56" height="56">
-      <div>
-        <h1 class="site-title">جامعة سبأ – Saba University</h1>
-        <p class="subtitle">بوابة الكلية • الأقسام • المقررات • أعضاء هيئة التدريس</p>
-      </div>
-    </div>
-    <nav class="top-nav" aria-label="التنقل الرئيسي">
-      <button id="navToggle" aria-expanded="false" aria-controls="navMenu">القائمة ☰</button>
-      <ul id="navMenu">
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="departments.html">الأقسام</a></li>
-        <li><a href="courses.html">المقررات</a></li>
-        <li><a href="instructors.html">المدرّسون</a></li>
-        <li><a href="about.html">عن الموقع</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="site-header">
+  <div class="brand">
+    <img src="saba-logo.png" alt="شعار جامعة سبأ" width="56" height="56">
+    <div><h1>جامعة سبأ</h1><p class="subtitle">بوابة الكلية • الأقسام • المقررات • المدرّسون</p></div>
+  </div>
+  <nav class="top-nav" aria-label="التنقل الرئيسي">
+    <button id="navToggle" aria-expanded="false" aria-controls="navMenu">القائمة ☰</button>
+    <ul id="navMenu">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="departments.html">الأقسام</a></li>
+      <li><a href="courses.html">المقررات</a></li>
+      <li><a href="instructors.html">المدرّسون</a></li>
+      <li><a href="about.html">عن الموقع</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <main id="main">
-    <section class="filters">
-      <input id="instructorSearch" type="search" placeholder="ابحث عن مدرّس…" aria-label="بحث عن المدرّسين">
-      <select id="expertiseSelect">
-        <option value="">كل التخصصات</option>
-      </select>
-    </section>
-    <section>
-      <div id="instructorsList" class="card-grid" role="list"></div>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <small>&copy; 2025 جامعة سبأ. ترخيص MIT (مشروع تعليمي).</small>
-  </footer>
-  <script type="module" src="assets/js/data.js"></script>
-  <script type="module" src="assets/js/app.js"></script>
-  <script>window.__PAGE__ = "instructors";</script>
-</body>
-</html>
+<main id="main">
+  <section class="filters">
+    <input id="instructorSearch" type="search" placeholder="ابحث عن مدرّس…" aria-label="بحث عن المدرسين">
+    <select id="expertiseSelect"><option value="">كل التخصصات</option></select>
+  </section>
+  <section><div id="instructorsList" class="card-grid" role="list"></div></section>
+</main>
+
+<footer class="site-footer"><small>&copy; 2025 جامعة سبأ. ترخيص MIT.</small></footer>
+<script type="module" src="data.js"></script>
+<script type="module" src="app.js"></script>
+<script>window.__PAGE__="instructors";</script>
+</body></html>
