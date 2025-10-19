@@ -1,51 +1,61 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>جامعة سبأ - البوابة الجامعية</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="site-header">
-  <div class="brand">
-    <img src="saba-logo.png" alt="شعار جامعة سبأ" width="56" height="56">
-    <div><h1>جامعة سبأ</h1><p class="subtitle">بوابة الكلية • الأقسام • المقررات • المدرّسون</p></div>
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>فندق المها — Premium — الرئيسية</title><link rel="stylesheet" href="style.css"></head><body>
+
+<header class="header">
+  <div class="container headerbar">
+    <a class="brand" href="index.html"><img src="logo.png" alt="" width="40" height="40"><h1>فندق المها — Premium</h1></a>
+    <nav class="nav" aria-label="التنقل">
+      <a href="index.html" aria-current="page">الرئيسية</a>
+      <a href="rooms.html" >الغرف</a>
+      <a href="amenities.html" >الخدمات</a>
+      <a href="booking.html" >احجز الآن</a>
+      <a href="reviews.html" >آراء</a>
+      <a class="btn" href="admin.html">لوحة الإدارة</a>
+    </nav>
   </div>
-  <nav class="top-nav" aria-label="التنقل الرئيسي">
-    <button id="navToggle" aria-expanded="false" aria-controls="navMenu">القائمة ☰</button>
-    <ul id="navMenu">
-      <li><a href="index.html">الرئيسية</a></li>
-      <li><a href="departments.html">الأقسام</a></li>
-      <li><a href="courses.html">المقررات</a></li>
-      <li><a href="instructors.html">المدرّسون</a></li>
-      <li><a href="about.html">عن الموقع</a></li>
-    </ul>
-  </nav>
 </header>
 
-<main id="main">
-  <section class="hero">
-    <h2>اكتشف تخصصك</h2>
-    <p>ابحث عن المقررات، استعرض الأقسام، وتعرّف على أعضاء هيئة التدريس.</p>
-    <div class="search-bar">
-      <input id="globalSearch" type="search" placeholder="ابحث عن: مقرر، كود، مدرّس…" aria-label="بحث عام">
-      <button id="searchBtn" class="btn">بحث</button>
+<section class="hero">
+  <div class="container wrap">
+    <div class="fade-up">
+      <span class="badge"><span class="dot"></span> خمس نجوم • تجربة فاخرة</span>
+      <h2>فخامة تُلامس التفاصيل، وإقامة لا تُنسى</h2>
+      <p>أجنحة ملكية، إطلالات ساحرة، ومرافق عالمية — حيث تلتقي الراحة بالأناقة.</p>
+      <div class="kpis">
+        <div class="kpi" data-kpi="visits"><span>زيارات الموقع</span><b>0</b></div>
+        <div class="kpi" data-kpi="bookings"><span>إجمالي الحجوزات</span><b>0</b></div>
+        <div class="kpi"><span>تقييم العملاء</span><b>4.9★</b></div>
+        <div class="kpi"><span>متوسط إشغال</span><b>92%</b></div>
+      </div>
     </div>
-    <div class="quick-filters">
-      <button class="chip" data-filter="الأمن السيبراني">الأمن السيبراني</button>
-      <button class="chip" data-filter="هندسة البرمجيات">هندسة البرمجيات</button>
-      <button class="chip" data-filter="تقنية المعلومات">تقنية المعلومات (IT)</button>
-      <button class="chip" data-filter="البرمجة">البرمجة</button>
+    <div class="gallery fade-up">
+      <img id="galleryImg" src="hero1.jpg" alt="معرض الفندق">
+      <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
     </div>
-  </section>
-  <section aria-labelledby="majors">
-    <h3 id="majors">تخصصات كلية الحاسوب</h3>
-    <div id="featuredCourses" class="card-grid" role="list"></div>
-  </section>
-</main>
+  </div>
+</section>
+<section class="parallax"><div class="container inner">
+  <h3 class="fade-up">اختر فئة غرفتك</h3>
+  <p class="fade-up" style="color:#cfcfd4">أجنحة مطلّة، ديلوكس بحرية، وخيارات اقتصادية أنيقة — جميعها بتجربة راقية.</p>
+</div></section>
+<section class="section"><div class="container">
+  <h3>أجنحة مختارة</h3>
+  <div class="card-grid" id="roomsCards"></div>
+</div></section>
+<script type="module">
+  import {{ initSlider }} from './app.js'; initSlider();
+  import {{ rooms }} from './data.js';
+  const box = document.getElementById('roomsCards');
+  box.innerHTML = rooms.slice(0,3).map(r=>`<article class='card fade-up'><h3>${r.title}</h3><p class='meta'>${r.beds} • ${r.size}</p><p><b style='color:#f0d07a'>${r.price}$</b> / الليلة</p><p>${r.tags.map(t=>`<span class='badge'><span class='dot'></span>${t}</span>`).join(' ')}</p><a class='btn' href='booking.html?room=${r.id}'>احجز هذا</a></article>`).join('');
+</script>
 
-<footer class="site-footer"><small>&copy; 2025 جامعة سبأ. ترخيص MIT.</small></footer>
-<script type="module" src="data.js"></script>
-<script type="module" src="app.js"></script>
-<script>window.__PAGE__="home";</script>
+
+<footer class="footer"><div class="container">© 2025 فندق المها — إصدار Premium (تعليمي).</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module">
+  import { bootCounters  , initSlider } from './app.js';
+  bootCounters();
+   , initSlider
+</script>
 </body></html>

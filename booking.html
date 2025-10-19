@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>احجز الآن — Premium</title><link rel="stylesheet" href="style.css"></head><body>
+
+<header class="header">
+  <div class="container headerbar">
+    <a class="brand" href="index.html"><img src="logo.png" alt="" width="40" height="40"><h1>فندق المها — Premium</h1></a>
+    <nav class="nav" aria-label="التنقل">
+      <a href="index.html" >الرئيسية</a>
+      <a href="rooms.html" >الغرف</a>
+      <a href="amenities.html" >الخدمات</a>
+      <a href="booking.html" aria-current="page">احجز الآن</a>
+      <a href="reviews.html" >آراء</a>
+      <a class="btn" href="admin.html">لوحة الإدارة</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section"><div class="container">
+  <h2 class="fade-up">احجز إقامتك الآن</h2>
+  <div class="grid-2">
+    <form id="bookingForm" class="card fade-up">
+      <label>الاسم الكامل</label><input class="input" name="name" required>
+      <label>رقم الهاتف</label><input class="input" name="phone" required>
+      <label>نوع الغرفة</label>
+      <select class="input" name="room" id="roomSel" required></select>
+      <div class="grid-2">
+        <div><label>تاريخ الوصول</label><input class="input" name="checkin" type="date" required></div>
+        <div><label>تاريخ المغادرة</label><input class="input" name="checkout" type="date" required></div>
+      </div>
+      <div style="margin-top:.9rem"><button class="btn">تأكيد الحجز</button></div>
+    </form>
+    <div class="fade-up">
+      <div class="card">
+        <h3>مؤشرات عامة</h3>
+        <div class="kpis" style="margin-top:.8rem">
+          <div class="kpi" data-kpi="visits"><span>زيارات الموقع</span><b>0</b></div>
+          <div class="kpi" data-kpi="bookings"><span>إجمالي الحجوزات</span><b>0</b></div>
+        </div>
+      </div>
+      <div class="card" style="margin-top:1rem">
+        <h3>مزايا الحجز المباشر</h3>
+        <ul>
+          <li>إلغاء مجاني حتى 24 ساعة قبل الوصول</li>
+          <li>خصم 10% على السبا والمطعم</li>
+          <li>ترقية مجانية عند التوفر</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></section>
+<script type="module">
+  import {{ rooms }} from './data.js';
+  import {{ wireBooking }} from './app.js';
+  const sel = document.getElementById('roomSel');
+  sel.innerHTML = rooms.map(r=>`<option value='${r.title}'>${r.title} — ${r.price}$</option>`).join('');
+  const q = new URLSearchParams(location.search).get('room');
+  if(q){ const r = rooms.find(x=>x.id===q); if(r) sel.value = r.title; }
+  wireBooking();
+</script>
+
+
+<footer class="footer"><div class="container">© 2025 فندق المها — إصدار Premium (تعليمي).</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module">
+  import { bootCounters  , wireBooking } from './app.js';
+  bootCounters();
+   , wireBooking
+</script>
+</body></html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>لوحة الإدارة — Premium</title><link rel="stylesheet" href="style.css"></head><body>
+
+<header class="header">
+  <div class="container headerbar">
+    <a class="brand" href="index.html"><img src="logo.png" alt="" width="40" height="40"><h1>فندق المها — Premium</h1></a>
+    <nav class="nav" aria-label="التنقل">
+      <a href="index.html" >الرئيسية</a>
+      <a href="rooms.html" >الغرف</a>
+      <a href="amenities.html" >الخدمات</a>
+      <a href="booking.html" >احجز الآن</a>
+      <a href="reviews.html" >آراء</a>
+      <a class="btn" href="admin.html">لوحة الإدارة</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section"><div class="container">
+  <h2 class="fade-up">لوحة الإدارة</h2>
+  <div class="kpis" style="margin-bottom:1rem">
+    <div class="kpi" data-kpi="visits"><span>زيارات</span><b>0</b></div>
+    <div class="kpi" data-kpi="bookings"><span>الحجوزات</span><b>0</b></div>
+    <div class="kpi"><span>آخر تحديث</span><b id="lastUpd">—</b></div>
+    <div class="kpi"><span>عمليات</span><b>CSV</b></div>
+  </div>
+  <div class="card fade-up">
+    <canvas id="bookChart" height="120" style="margin-bottom:1rem"></canvas>
+    <div style="display:flex;gap:.6rem;margin-bottom:.6rem">
+      <button id="exportBtn" class="btn">تصدير CSV</button>
+      <button id="clearBtn" class="btn">مسح الحجوزات</button>
+    </div>
+    <div style="overflow:auto;border:1px solid var(--border);border-radius:14px">
+      <table>
+        <thead><tr><th>رقم الحجز</th><th>الاسم</th><th>الهاتف</th><th>الغرفة</th><th>الوصول</th><th>المغادرة</th></tr></thead>
+        <tbody id="adminRows"></tbody>
+      </table>
+    </div>
+  </div>
+</div></section>
+<script type="module">
+  import {{ loadAdmin }} from './app.js';
+  loadAdmin();
+</script>
+
+
+<footer class="footer"><div class="container">© 2025 فندق المها — إصدار Premium (تعليمي).</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module">
+  import { bootCounters  } from './app.js';
+  bootCounters();
+  
+</script>
+</body></html>

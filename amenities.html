@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الخدمات — Premium</title><link rel="stylesheet" href="style.css"></head><body>
+
+<header class="header">
+  <div class="container headerbar">
+    <a class="brand" href="index.html"><img src="logo.png" alt="" width="40" height="40"><h1>فندق المها — Premium</h1></a>
+    <nav class="nav" aria-label="التنقل">
+      <a href="index.html" >الرئيسية</a>
+      <a href="rooms.html" >الغرف</a>
+      <a href="amenities.html" aria-current="page">الخدمات</a>
+      <a href="booking.html" >احجز الآن</a>
+      <a href="reviews.html" >آراء</a>
+      <a class="btn" href="admin.html">لوحة الإدارة</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section"><div class="container">
+  <h2 class="fade-up">الخدمات والمرافق</h2>
+  <div id="amenGrid" class="card-grid"></div>
+  <div class="notice fade-up" style="margin-top:1rem">تفتح مرافق السبا والمسبح من 7 صباحًا حتى 11 مساءً.</div>
+</div></section>
+<script type="module">
+  import {{ amenities }} from './data.js';
+  const grid = document.getElementById('amenGrid');
+  grid.innerHTML = amenities.map(a=>`<article class='card fade-up'><h3>${a.icon} ${a.title}</h3><p class='meta'>${a.desc}</p></article>`).join('');
+</script>
+
+
+<footer class="footer"><div class="container">© 2025 فندق المها — إصدار Premium (تعليمي).</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module">
+  import { bootCounters  } from './app.js';
+  bootCounters();
+  
+</script>
+</body></html>
